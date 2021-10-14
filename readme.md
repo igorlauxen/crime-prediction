@@ -10,7 +10,15 @@ O algoritmo a ser considerado é [Random Forest](https://en.wikipedia.org/wiki/R
 
 - [VSCode]()
 - [Pycharm]()
-- [Python]()
+- [Python3]()
+
+## TODO list
+
+- [ ] Decidir quais colunas do Excel vão ser consideradas
+- [ ] Executar RF com o mínimo possível de dados
+  - Colunas mínimas: Primary Type, Latitude, Longitude, todas as colunas de data (após formato)
+- [ ] Adicionar ao RF todas as colunas String necessárias
+  - Colunas necessárias: Primary Type, Description
 
 ## Nice to know
 
