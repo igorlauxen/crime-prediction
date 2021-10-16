@@ -26,8 +26,8 @@ class DataPreparator:
     # Removing Location Description because its description varies A LOT
     # Removing Description because it has a lot of values as well. I may consider this to be re-add
     dropped_columns = [
-      "Description", "Location", "Location Description", # I may consider reusem these columns
-      "District", "Ward", "Community Area", "Block", # I may consider reusem these columns
+      "Description", "Location Description", # I may consider reusem these columns
+      "District", "Ward", "Community Area", "Location","Block",# I may consider reusem these columns
       "IUCR", "Beat", "FBI Code", "X Coordinate", "Y Coordinate", "Updated On", "Case Number"]
 
     # remove the following columns
@@ -63,7 +63,15 @@ class DataPreparator:
     crime_df = booleanFormatter.format(crime_df)
     #print(crime_df.head(5))
 
+    # like Thanos, erase half of data
+    # doing this due to performance issues
+    # Random Forest was taking more than 30 minutes to run
+    # crime_df = crime_df.drop(crime_df.index[350000:500000])
+
     clean_data_frame = crime_df
+
+    print("O que nós temos antes de começar o processamento? ", clean_data_frame.head(1))
+    print("\n\nMeu tamanho é: ", clean_data_frame.size)
 
     # The target, also known as the label, is the value we want to predict
     # The features are all the columns the model uses to make a prediction

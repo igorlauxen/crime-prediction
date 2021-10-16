@@ -4,7 +4,6 @@ from FileCreator import FileCreator
 
 fileCreator = FileCreator()
 
-
 class MapAnalyser:
 
   def createMap(self, dataframe):

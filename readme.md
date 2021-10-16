@@ -9,7 +9,6 @@ O algoritmo a ser considerado é [Random Forest](https://en.wikipedia.org/wiki/R
 Inspirado pesadamente nos tutoriais:
 
 1. [Toward Data Science: random forest in python](https://towardsdatascience.com/random-forest-in-python-24d0893d51c0)
-1. [Working with Geospatial Data in ML](https://heartbeat.comet.ml/working-with-geospatial-data-in-machine-learning-ad4097c7228d)
 
 ## Pre-Requisitos para executar
 
@@ -40,3 +39,8 @@ Para splitar os arquivos foi usado o comando:
 `split -l 500000 Chicago_Crimes_2012_to_2017.csv generated_file_`
 
 funciona no windows se usar o [cmder](https://cmder.net/)
+
+## Documentos para inspiração
+
+- [Spark + Random Forest](https://www.silect.is/blog/random-forest-models-in-spark-ml/)
+- [Working with Geospatial Data in ML](https://heartbeat.comet.ml/working-with-geospatial-data-in-machine-learning-ad4097c7228d)

@@ -1,5 +1,6 @@
 import pandas as pd
-import seaborn as sns
+import numpy as np
+from sklearn.ensemble import RandomForestRegressor
 
 from DataPreparator import DataPreparator
 from MapAnalyser import MapAnalyser
@@ -7,21 +8,34 @@ from MapAnalyser import MapAnalyser
 dataPreparator = DataPreparator()
 mapAnalyser = MapAnalyser()
 
-
 # Read in data and get dataframe
 # https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html
 #original_crimes_dataframe = oc_df
 oc_df = pd.read_csv('./data/generated_file_aa.csv',index_col ="ID")
-print(oc_df.head(5))
+print("\n\nMeu tamanho é: ", oc_df.size)
 
-
-# sns.scatterplot(oc_df['Latitude'], oc_df['Longitude'])
+print(oc_df.head(10))
+print("\n\nMeu tamanho após filtro é: ", oc_df.size)
+print("Dados filtrados")
 
 # Data Preparation
 labels, feature_list, features_np_array, train_features, test_features, train_labels, test_labels, clean_data_frame = dataPreparator.prepare(oc_df)
-# Baseline
 
-mapAnalyser.createMap(clean_data_frame)
+print("Random Forest vai começar!")
+rf = RandomForestRegressor(n_estimators = 500, random_state = 42)
+print("RF inicializado")
+rf.fit(train_features, train_labels)
+print("RF Treinado")
+
+# Use the forest's predict method on the test data
+predictions = rf.predict(test_features)
+print("Random Forest finalizou as predições!")
+
+# Calculate the absolute errors
+errors = abs(predictions - test_labels)
+
+# Print out the mean absolute error (mae)
+print('Mean Absolute Error:',np.mean(errors))
 
 
 # RF execution
