@@ -23,6 +23,7 @@ Inspirado pesadamente nos tutoriais:
     - `pip3 install geopy`
 - Baixar o arquivo `generated_file_aa.csv` do [Google Docs](https://drive.google.com/file/d/10P8EF5IAazl2Tef_Z3Pbs8QfKS4-2E4m/view?usp=sharing) e colocar na pasta `/data`
   - link: https://drive.google.com/file/d/10P8EF5IAazl2Tef_Z3Pbs8QfKS4-2E4m/view?usp=sharing
+  - esse arquivo é um subset dos dados de Chicago_Crimes_2012_to_2017.csv
 
 ## Execução
 
