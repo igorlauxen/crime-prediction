@@ -29,7 +29,7 @@ Inspirado pesadamente nos tutoriais:
 
 - Executar o arquivo `main.py`
 
-_Nota:_ a execução do Random Forest em um mac com 16GB de memória demorou mais de 2hr para processar todos os arquivos.
+_Nota:_ a execução do Random Forest em um mac com 16GB de memória demorou mais de 5hr para processar todos os arquivos.
 
 ## Estrutura de classes
 
