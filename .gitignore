@@ -130,3 +130,5 @@ dmypy.json
 
 # Remove data folder since it's too big
 data/
+
+map/*.html

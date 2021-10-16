@@ -15,12 +15,13 @@ oc_df = pd.read_csv('./data/generated_file_aa.csv',index_col ="ID")
 print(oc_df.head(5))
 
 
-sns.scatterplot(oc_df['Latitude'], oc_df['Longitude'])
+# sns.scatterplot(oc_df['Latitude'], oc_df['Longitude'])
 
 # Data Preparation
-labels, feature_list, features_np_array, train_features, test_features, train_labels, test_labels = dataPreparator.prepare(oc_df)
+labels, feature_list, features_np_array, train_features, test_features, train_labels, test_labels, clean_data_frame = dataPreparator.prepare(oc_df)
 # Baseline
-mapAnalyser.createMap(oc_df)
+
+mapAnalyser.createMap(clean_data_frame)
 
 
 # RF execution
