@@ -12,25 +12,52 @@ Inspirado pesadamente nos tutoriais:
 
 ## Pre-Requisitos para executar
 
-- [VSCode]()
-- [Pycharm]()
-- [Python3]()
+- [VSCode](https://code.visualstudio.com/)
+  - versão utilizada: 1.60.2
+- [Python3](https://www.python.org/downloads/)
+  - versão utilizada: Python 3.9.2
 - [Pip3](https://stackoverflow.com/questions/6587507/how-to-install-pip-with-python-3)
+  - versão utilizada: pip 21.0.1
   - install the following libs:
     - `pip3 install folium`
     - `pip3 install geopy`
+- Baixar o arquivo `generated_file_aa.csv` do [Google Docs](https://drive.google.com/file/d/10P8EF5IAazl2Tef_Z3Pbs8QfKS4-2E4m/view?usp=sharing) e colocar na pasta `/data`
+  - link: https://drive.google.com/file/d/10P8EF5IAazl2Tef_Z3Pbs8QfKS4-2E4m/view?usp=sharing
 
-## TODO list
+## Execução
 
-- [X] Decidir quais colunas do Excel vão ser consideradas
-- [ ] Executar RF com o mínimo possível de dados
-  - [X] Colunas mínimas: Primary Type, Latitude, Longitude, todas as colunas de data (após formato)
-- [X] Tem que converter campos booleans para numéricos
-- [ ] Adicionar ao RF todas as colunas String necessárias
-  - Colunas necessárias: Primary Type, Description, Location
-- [ ] Criar/Valuda uma coluna coluna para medir a distancia dos pontos passa saber se já aconteceu um crime perto
-- [ ] Necessário revisar as datas para transformar em seno e cosseno talvez?
-  - Baseado em [Feature Engineering Cyclical Features](http://blog.davidkaleko.com/feature-engineering-cyclical-features.html)
+- Executar o arquivo `main.py`
+
+_Nota:_ a execução do Random Forest em um mac com 16GB de memória demorou mais de 2hr para processar todos os arquivos.
+
+## Estrutura de classes
+
+- main.py
+  - classe principal, importa arquivos, chama a classe de preparação de dados e processa usando random forest
+- BooleanFormatter.py, DateFormatter.py, TextFormatter.py
+  - fazem processamento e limpeza de tabelas baseadas em seus tipos.
+- DataPreparator.py
+  - Remove colunas desnecessárias, invoca as classes Formatters.py para processamento dos dados
+  - Retorna atributos para serem consumidos pelo random forest e o dataframe limpo
+- MapAnalyser.py
+  - classe suporte: baseado em um dataframe, cria um arquivo html com os pontos dos crimes
+  - utilizado para ter uma ideia geral do mapa e se haveria possíveis outliers
+  - como o arquivo gerado tem mais de 200mb, somente foi enviado para o repostório screenshots da análise do mapa que podem ser vistos em `map_screenshots`
+- FileCreator.py
+  - criar um arquivo html vazio abaixo da pasta `map` que é usado pelo MapAnalyzer.py para salvar os dados
+
+## Estrutura de Pastas
+
+- production_code
+  - todas as classes que são usadas
+- map
+  - usada para salvar o html do mapa
+- map_screenhsots
+  - análise do mapa html
+- executions
+  - print das execuções do algoritmo com diferentes linhas (250000, 350000 e todas as linhas)
+- data
+  - pasta onde o arquivo olhara para consumir os dados
 
 ## Nice to know
 
