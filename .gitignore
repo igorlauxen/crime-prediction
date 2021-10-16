@@ -129,4 +129,6 @@ dmypy.json
 .pyre/
 
 # Remove data folder since it's too big
-data/
+data/*.csv
+
+map/*.html
