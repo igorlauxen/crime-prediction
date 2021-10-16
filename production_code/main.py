@@ -35,7 +35,8 @@ print("Random Forest finalizou as predições!")
 errors = abs(predictions - test_labels)
 
 # Print out the mean absolute error (mae)
-print('Mean Absolute Error:',np.mean(errors))
+print('Valores dos errors:',errors)
+print('Media absolura dos erros:',np.mean(errors))
 
 
 # RF execution
